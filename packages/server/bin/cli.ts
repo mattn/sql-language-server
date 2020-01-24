@@ -20,6 +20,8 @@ const cli = yargs
     }
   }, () => {
     const connection = createServer()
+    // patch console.log to disable
+    console.log = function() {}
     connection.console.log('start sql-language-server')
     console.log('start sql-language-server')
     process.stdin.resume()
